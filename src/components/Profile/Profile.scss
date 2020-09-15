@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.profile {
+    display: flex;
+    .about {
+        width: 70vw;
+    }
+    .med-history {
+        background-color: $lightGreen;
+        width: 25vw;
+        height: 78vh;
+        margin-top: 76px;
+        border: solid black;
+        margin-left: 30px;
+    }
+}
