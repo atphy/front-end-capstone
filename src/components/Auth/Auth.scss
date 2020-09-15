@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+
+.Auth {
+    text-align: center;
+}
+
+.title {
+    font-family: 'Josefin Slab', serif;
+    font-weight: 100;
+    font-size: 150px;
+    color: $darkGreen;
+    margin-top: 100px;
+}
+
+.slogan {
+    display: flex;
+    font-family: 'Galada', cursive;
+    text-align: center;
+    justify-content: center;
+    .slogan-front {
+        color: $medGrey;
+        margin: 0;
+        font-size: 25px;
+    }
+    .slogan-end {
+        color: $darkGreen;
+        margin: 0;
+    }
+}
+
+.btn-login {
+    background-color: #619cef;
+    border-radius: 5px;
+    border: solid black 2px;
+    padding: 18px 9px;
+    color: white;
+    font-family: 'Asap', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    margin-top: 100px;
+}
