@@ -1,0 +1,16 @@
+{ 
+    "bupropion": {
+      "userRating": 5,
+      "userSideEffects": ["Nausea", "Heartburn", "Upset Stomach", "Indigestion"],
+      "currentPrescription": "True",
+      "userNotes" : "Even more words",
+      "prescriptionInstances": ["randomId1", "randomId2"]
+    },
+        "aripiprazole": {
+           "userRating": 2,
+           "userSideEffects": ["Sleeplessness", "Turbo Diarrhea", "Nausea", "Indigestion"],
+           "currentPrescription": "False",
+           "userNotes" : "General med notes",
+           "prescriptionInstances": ["randomId3"]
+    }
+  }

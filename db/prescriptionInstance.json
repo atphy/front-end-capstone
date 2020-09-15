@@ -1,0 +1,20 @@
+{
+    "randomId1": {
+      "startDate": "01-09-2001",
+      "endDate": "Early 2007",
+      "dosage": "300 mg per day",
+      "userNotes": "Love it, huge fan"  
+    },
+    "randomId2": {
+      "startDate": "2009",
+      "endDate": "Present",
+      "dosage": "450 mg per day",
+      "userNotes": "Love it even more, even huger fan" 
+    },
+    "randomId3": {
+      "startDate": "2002",
+      "endDate": "April 2004",
+      "dosage": "10 mg per day",
+      "userNotes": "Ineffective, bad side effects"
+    }
+  }

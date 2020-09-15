@@ -1,0 +1,8 @@
+{
+    "user1": {
+      "aboutSection": "Lots of words, tons of content",
+      "medicalHistory": ["bupropion", "aripirazole"],
+      "shareLink": "randomString",
+      "uid": "randomUid"
+    }
+  }

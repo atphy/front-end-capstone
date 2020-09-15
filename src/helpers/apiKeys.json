@@ -1,0 +1,16 @@
+
+{
+    "firebaseConfig": {
+      "apiKey": "AIzaSyDL4PAnPgR8xTYl5j52oNNQUXa8dIA348k",
+      "authDomain": "timmi-b6657.firebaseapp.com",
+      "databaseURL": "https://timmi-b6657.firebaseio.com",
+      "projectId": "timmi-b6657",
+      "storageBucket": "timmi-b6657.appspot.com",
+      "messagingSenderId": "452654397576",
+      "appId": "1:452654397576:web:098b7c7e61c3e354dd473d"
+    },
+    "openFDAConfig": {
+        "apiKey": "4UvFNuihSgMIIZWNkCPsPrB7BnwqyXs2GQFW4b6L",
+        "databaseURL": "https://api.fda.gov/drug/event.json"
+      }
+  }
