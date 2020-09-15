@@ -1,0 +1,5 @@
+{
+    "user": "seedUser",
+    "medicalHistory": "seedHistory",
+    "prescriptionInstance": "seedInstances"
+}
