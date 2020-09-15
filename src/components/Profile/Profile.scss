@@ -4,11 +4,20 @@
     display: flex;
     .about {
         width: 70vw;
+        height: 500px;
+    }
+    .profile-image{
+        position: absolute;
+        height: 35vh;
+        width: 70vw;
+        margin-top: 400px;
+        margin-left: 20px;
+        object-fit: cover;
     }
     .med-history {
         background-color: $lightGreen;
         width: 25vw;
-        height: 78vh;
+        height: 588px;
         margin-top: 76px;
         border: solid black;
         margin-left: 30px;

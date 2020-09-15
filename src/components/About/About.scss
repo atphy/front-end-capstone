@@ -6,7 +6,7 @@
         font-family: 'Josefin Sans';
     }
     .about-container {
-        height: 40vh;
+        height: 305px;
         width: 100%;
         overflow: auto;
         background-color: $lightGreen;
@@ -30,6 +30,6 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: $lightGreen;
+    background: $darkGreen;
     border-radius: 10px;
   }
