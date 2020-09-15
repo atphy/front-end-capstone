@@ -38,7 +38,7 @@ render() {
     if (authed) {
       return <div>
               <Nav />
-              <Profile />;
+              <Profile />
             </div>;
     }
     return <Auth />;

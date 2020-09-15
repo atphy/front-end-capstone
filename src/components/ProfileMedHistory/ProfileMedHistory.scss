@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.med-history-header {
+    background-color: $medGrey;
+    text-align: center;
+    border-bottom: solid black 1px;
+    margin: 0;
+}
+
+.med-history-body {
+    height: 74vh;
+    overflow: auto;
+}
+
+.med-card {
+    border-bottom: solid black;
+    height: 60px;
+    .single-med-card {
+        margin-bottom: 0;
+        margin-left: 5px;
+        margin-top: 30px;
+    }
+}
