@@ -4,44 +4,31 @@ import './ProfileMedHistory.scss';
 
 import profileShape from '../../helpers/props/profileShape';
 
+import SingleMed from './singleMed/singleMed';
+
 class ProfileMedHistory extends React.Component {
-  /* static propTypes = {
+    state= {
+      medicalHistory: this.props,
+    }
+    /* static propTypes = {
       profile: profileShape.profileShape,
     } */
 
-  render() {
-    return (
+    // also needs props for singleMed
+
+    render() {
+      console.warn(this.props);
+      // const singleMed = medicalHistory.forEach((medication) => <SingleMed medication={medication} />);
+
+      return (
           <div className="med-history">
               <p className="med-history-header">My Medical History</p>
               <div className="med-history-body">
-              <div className="med-card">
-                  <p className="single-med-card">Bupropion</p>
-              </div>
-              <div className="med-card">
-                  <p className="single-med-card">Aripiprazole</p>
-              </div>
-              <div className="med-card">
-                  <p className="single-med-card">Venlafaxine</p>
-              </div>
-              <div className="med-card">
-                  <p className="single-med-card">Venlafaxine</p>
-              </div>
-              <div className="med-card">
-                  <p className="single-med-card">Venlafaxine</p>
-              </div>
-              <div className="med-card">
-                  <p className="single-med-card">Venlafaxine</p>
-              </div>
-              <div className="med-card">
-                  <p className="single-med-card">Venlafaxine</p>
-              </div>
-              <div className="med-card">
-                  <p className="single-med-card">Venlafaxine</p>
-              </div>
+
               </div>
           </div>
-    );
-  }
+      );
+    }
 }
 
 export default ProfileMedHistory;

@@ -11,7 +11,6 @@ class About extends React.Component {
 
   render() {
     const { profile } = this.props;
-    console.warn(profile);
     return (
         <div className="about">
             <h1 className="about-title">About me</h1>
