@@ -3,6 +3,12 @@
       "aboutSection": "Lots of words, tons of content",
       "medicalHistory": ["bupropion", "aripirazole"],
       "shareLink": "randomString",
-      "uid": "randomUid"
-    }
+      "uid": "qHFtRWJyUVMz1YeYvi3IyvQEjZf2"
+    },
+    "user2": {
+        "aboutSection": "Lots of other words, made up content",
+        "medicalHistory": ["paxil", "aripirazole"],
+        "shareLink": "randomString",
+        "uid": "randomstring"
+      }
   }

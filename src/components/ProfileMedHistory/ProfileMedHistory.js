@@ -2,7 +2,13 @@ import React from 'react';
 
 import './ProfileMedHistory.scss';
 
+import profileShape from '../../helpers/props/profileShape';
+
 class ProfileMedHistory extends React.Component {
+  /* static propTypes = {
+      profile: profileShape.profileShape,
+    } */
+
   render() {
     return (
           <div className="med-history">
