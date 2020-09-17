@@ -7,6 +7,7 @@ import authData from '../../helpers/data/authData';
 
 import About from '../About/About';
 import ProfileMedHistory from '../ProfileMedHistory/ProfileMedHistory';
+import MedPage from '../MedPage/MedPage';
 
 class Profile extends React.Component {
     state = {
@@ -30,14 +31,21 @@ class Profile extends React.Component {
     }
 
     render() {
-      const { profile } = this.state;
+      const { profile, medPage } = this.state;
       const { medicalHistory } = profile;
 
       return (
-      <div className="profile">
-        <About profile={profile} className="about"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Oak_tree_with_moon_and_wildflowers.jpg" alt="" className="profile-image"></img>
-        <ProfileMedHistory showMedPage={this.showMedPage} medicalHistory={medicalHistory} className="med-history"/>
+      <div>
+                            {
+                      medPage
+                        ? <MedPage />
+                        : <div className="profile">
+                            <About profile={profile} className="about"/>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Oak_tree_with_moon_and_wildflowers.jpg" alt="" className="profile-image"></img>
+                            <ProfileMedHistory showMedPage={this.showMedPage} medicalHistory={medicalHistory} className="med-history"/>
+                        </div>
+                  }
+
       </div>
       );
     }
