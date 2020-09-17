@@ -6,13 +6,34 @@ import openFDA from '../../../helpers/data/openFDA';
 import './AddMedModal.scss';
 
 class AddMedModal extends React.Component {
+    state = {
+      medSearch: '',
+    }
+
     static propTypes = {
       modalDisplay: PropTypes.string.isRequired,
       hideModal: PropTypes.func.isRequired,
+      showMedPage: PropTypes.func.isRequired,
     }
 
     medSearchEvent = (e) => {
-      openFDA.readFDA('patient.drug.openfda.generic_name:"bupropion"&count=patient.reaction.reactionmeddrapt.exact');
+      e.preventDefault();
+      const { medSearch } = this.state;
+      const { showMedPage } = this.props;
+      openFDA.readFDA(medSearch)
+        .then((medSymptoms) => {
+          if (medSymptoms) {
+            console.warn('found em', medSymptoms);
+            { showMedPage(); }
+          } else {
+            console.warn('didn\'t find em');
+          }
+        });
+    }
+
+    searchEvent = (e) => {
+      e.preventDefault();
+      this.setState({ medSearch: e.target.value });
     }
 
     render() {
@@ -25,7 +46,7 @@ class AddMedModal extends React.Component {
       <div id="myModal" className="modal" style={modalStyle}>
         <div className="modal-content">
           <span className="close" onClick={hideModal}>&times;</span>
-          <textarea className="edit-about" ></textarea>
+          <textarea className="edit-about" onChange={this.searchEvent} ></textarea>
           <button className="edit-about-submit" onClick={this.medSearchEvent}><i className="fas fa-search"></i></button>
         </div>
 

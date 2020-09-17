@@ -35,7 +35,7 @@ class ProfileMedHistory extends React.Component {
 
     return (
           <div className="med-history">
-              <AddMedModal hideModal={this.hideModal} modalDisplay={modalDisplay}/>
+              <AddMedModal showMedPage={showMedPage} hideModal={this.hideModal} modalDisplay={modalDisplay}/>
               <button className="add-history" onClick={this.showModal}><i className="fas fa-plus-square"></i></button>
               <p className="med-history-header">My Medical History</p>
               <div className="med-history-body">
