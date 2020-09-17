@@ -24,7 +24,7 @@ class AddMedModal extends React.Component {
         .then((medSymptoms) => {
           if (medSymptoms) {
             console.warn('found em', medSymptoms);
-            { showMedPage(); }
+            showMedPage(medSearch);
           } else {
             console.warn('didn\'t find em');
           }

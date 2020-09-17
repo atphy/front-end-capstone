@@ -18,10 +18,15 @@ class Profile extends React.Component {
         uid: '',
       },
       medPage: false,
+      selectedMed: '',
     }
 
-    showMedPage = () => {
+    showMedPage = (selected) => {
       this.setState({ medPage: true });
+      const setSelectedMed = (selectedMed) => {
+        this.setState({ selectedMed });
+      };
+      setSelectedMed(selected);
     }
 
     componentDidMount() {
