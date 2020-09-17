@@ -10,7 +10,12 @@ import ProfileMedHistory from '../ProfileMedHistory/ProfileMedHistory';
 
 class Profile extends React.Component {
     state = {
-      profile: '',
+      profile: {
+        aboutSection: '',
+        medicalHistory: [],
+        shareLink: '',
+        uid: '',
+      },
     }
 
     componentDidMount() {
@@ -22,7 +27,7 @@ class Profile extends React.Component {
     render() {
       const { profile } = this.state;
       const { medicalHistory } = profile;
-      // console.warn(medicalHistory);
+
       return (
       <div className="profile">
         <About profile={profile} className="about"/>
