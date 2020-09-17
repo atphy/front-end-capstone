@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import './ProfileMedHistory.scss';
 
 import profileShape from '../../helpers/props/profileShape';
@@ -9,14 +11,13 @@ import SingleMed from './singleMed/singleMed';
 class ProfileMedHistory extends React.Component {
   static propTypes = {
     profile: profileShape.profileShape,
+    showMedPage: PropTypes.func.isRequired,
   }
 
-  // also needs props for singleMed
-
   render() {
-    const { medicalHistory } = this.props;
+    const { medicalHistory, showMedPage } = this.props;
 
-    const singleMed = medicalHistory.map((medication) => <SingleMed key={medication} medication={medication} />);
+    const singleMed = medicalHistory.map((medication) => <SingleMed showMedPage={showMedPage} key={medication} medication={medication} />);
 
     return (
           <div className="med-history">

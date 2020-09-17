@@ -16,6 +16,11 @@ class Profile extends React.Component {
         shareLink: '',
         uid: '',
       },
+      medPage: false,
+    }
+
+    showMedPage = () => {
+      this.setState({ medPage: true });
     }
 
     componentDidMount() {
@@ -32,7 +37,7 @@ class Profile extends React.Component {
       <div className="profile">
         <About profile={profile} className="about"/>
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Oak_tree_with_moon_and_wildflowers.jpg" alt="" className="profile-image"></img>
-        <ProfileMedHistory medicalHistory={medicalHistory} className="med-history"/>
+        <ProfileMedHistory showMedPage={this.showMedPage} medicalHistory={medicalHistory} className="med-history"/>
       </div>
       );
     }
