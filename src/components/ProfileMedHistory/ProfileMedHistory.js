@@ -11,8 +11,6 @@ class ProfileMedHistory extends React.Component {
     profile: profileShape.profileShape,
   }
 
-  // also needs props for singleMed
-
   render() {
     const { medicalHistory } = this.props;
 

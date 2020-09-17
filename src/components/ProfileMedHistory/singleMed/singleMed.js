@@ -1,16 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class SingleMed extends React.Component {
-  // proptypes needed
-  render() {
-    const { medication } = this.props;
+    static propTypes = {
+      medication: PropTypes.string.isRequired,
+    }
 
-    return (
+    render() {
+      const { medication } = this.props;
+
+      return (
         <div className="med-card">
           <p className="single-med-card">{medication}</p>
         </div>
-    );
-  }
+      );
+    }
 }
 
 export default SingleMed;

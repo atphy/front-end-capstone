@@ -9,4 +9,6 @@ const getProfileByUid = (uid) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getProfileByUid };
+const updateUser = (userId, updatedUser) => axios.put(`${baseUrl}/user/${userId}.json`, updatedUser);
+
+export default { getProfileByUid, updateUser };
