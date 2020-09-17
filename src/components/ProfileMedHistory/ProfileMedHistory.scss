@@ -7,6 +7,15 @@
     margin: 0;
 }
 
+.add-history {
+    position: absolute;
+    margin-left: 20vw;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: $darkGreen;
+    margin-top: 0;
+}
+
 .med-history-body {
     height: 74.5vh;
     overflow: auto;
