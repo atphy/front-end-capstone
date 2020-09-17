@@ -14,4 +14,16 @@ const convertFirebaseCollection = (data) => {
   return arrayCollection;
 };
 
-export default { convertFirebaseCollection };
+const addIdToUser = (data) => {
+  const user = data;
+
+  if (user) {
+    Object.keys(user).forEach((userId) => {
+      user[userId].id = userId;
+    });
+  }
+
+  return user;
+};
+
+export default { convertFirebaseCollection, addIdToUser };
