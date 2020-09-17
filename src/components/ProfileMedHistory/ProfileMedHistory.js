@@ -21,6 +21,7 @@ class ProfileMedHistory extends React.Component {
 
     return (
           <div className="med-history">
+              <button className="add-history"><i class="fas fa-plus-square"></i></button>
               <p className="med-history-header">My Medical History</p>
               <div className="med-history-body">
                 {singleMed}
