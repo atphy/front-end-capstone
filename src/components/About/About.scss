@@ -4,6 +4,14 @@
     margin: 20px 0px 0px 20px;
     .about-title {
         font-family: 'Josefin Sans';
+        float: left;
+    }
+    .edit-button {
+        background-color: rgba(0,0,0,0);
+        border: none;
+        color: $medGrey;
+        margin-left: 40px;
+        font-size: 29px;
     }
     .about-container {
         height: 305px;
@@ -12,13 +20,65 @@
         background-color: $lightGreen;
         border: solid black;
         border-radius: 5px;
+        -webkit-animation: fadein 2s linear forwards;
+        animation: fadeOut 2s ease;
+        animation: fadein 2s linear forwards;
+        opacity: 0;
         .about-body {
             font-weight: 400;
             font-size: 20px;
             margin: 10px;
         }
     }
+    .editor-container {
+        float: left;
+        margin-top: 5px;
+        -webkit-animation: fadein 2s linear forwards;
+        -webkit-animation: fadeOut 2s linear forwards;
+        animation: fadeOut 2s linear forwards;
+        animation: fadein 2s linear forwards;
+        opacity: 0;
+        .edit-about-body {
+            font-family: Asap;
+            font-size: 13px;
+        }
+        .edit-about-body-bold {
+            font-weight: bold;
+        }
+        .edit-about {
+            resize: none;
+            height: 135px;
+            width: 97%;
+        }
+        .edit-about-submit {
+            float: right;
+            height: 135px;
+            width: 3%;
+            border: none;
+            background-color: $medGreen;
+        }
+    }
 }
+
+@-webkit-keyframes fadein {
+    100% { opacity: 1; }
+  }
+  
+  @keyframes fadein {
+    100% { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    100% {
+      opacity:0;
+    }
+  }
+
+  @-webkit-keyframes fadeOut {
+    100% {
+      opacity:0;
+    }
+  }
 
 ::-webkit-scrollbar {
     width: 5px;
