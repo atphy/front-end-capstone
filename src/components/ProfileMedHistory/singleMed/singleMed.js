@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import openFDA from '../../../helpers/data/openFDA';
+
 class SingleMed extends React.Component {
     static propTypes = {
-      key: PropTypes.string.isRequired,
       medication: PropTypes.string.isRequired,
       showMedPage: PropTypes.func.isRequired,
     }
@@ -11,11 +12,34 @@ class SingleMed extends React.Component {
     medClickEvent = (e) => {
       e.preventDefault();
       const { medication, showMedPage } = this.props;
-      showMedPage(medication);
+      openFDA.readFDA(medication)
+        .then((medSymptoms) => {
+          if (medSymptoms) {
+            console.warn('found em', medSymptoms);
+            showMedPage(medication);
+          } else {
+            console.warn('didn\'t find em');
+          }
+        });
+    }
+
+    medSearchEvent = (e) => {
+      e.preventDefault();
+      const { medSearch } = this.state;
+      const { showMedPage } = this.props;
+      openFDA.readFDA(medSearch)
+        .then((medSymptoms) => {
+          if (medSymptoms) {
+            console.warn('found em', medSymptoms);
+            showMedPage(medSearch);
+          } else {
+            console.warn('didn\'t find em');
+          }
+        });
     }
 
     render() {
-      const { medication, showMedPage } = this.props;
+      const { medication } = this.props;
 
       return (
         <div onClick={this.medClickEvent} className="med-card">

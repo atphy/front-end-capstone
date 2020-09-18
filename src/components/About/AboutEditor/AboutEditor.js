@@ -23,7 +23,7 @@ class AboutEditor extends React.Component {
     editAboutEvent = (e) => {
       e.preventDefault();
       const { newAbout } = this.state;
-      const { id, profile } = this.props;
+      const { id } = this.props;
       const myUpdatedAbout = {
         aboutSection: newAbout,
       };

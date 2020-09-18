@@ -31,7 +31,7 @@ class ProfileMedHistory extends React.Component {
     const { medicalHistory, showMedPage } = this.props;
     const { modalDisplay } = this.state;
 
-    const singleMed = medicalHistory.map((medication) => <SingleMed showMedPage={showMedPage} key={medication} medication={medication} />);
+    const singleMed = medicalHistory.map((medication) => <SingleMed hideMedPage={this.hideMedPage} showMedPage={showMedPage} key={medication} medication={medication} />);
 
     return (
           <div className="med-history">
