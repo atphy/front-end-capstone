@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './MedPage.scss';
+
 class MedPage extends React.Component {
     static propTypes = {
       hideMedPage: PropTypes.func.isRequired,
@@ -10,11 +12,7 @@ class MedPage extends React.Component {
       const { hideMedPage } = this.props;
       return (
       <div>
-        <h1 className="nav-title">Timmi</h1>
-        <div className="anchor-holder">
-          <button className="nav-link">Get your private link for sharing</button>
-          <button className="nav-logout" onClick={hideMedPage}>Log out</button>
-        </div>
+          <button className="return-profile" onClick={hideMedPage}>Return to Profile</button>
       </div>
       );
     }

@@ -24,7 +24,8 @@ class AddMedModal extends React.Component {
         .then((medSymptoms) => {
           if (medSymptoms) {
             console.warn('found em', medSymptoms);
-            showMedPage(medSearch);
+            const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+            showMedPage(capitalize(medSearch));
           } else {
             console.warn('didn\'t find em');
           }
