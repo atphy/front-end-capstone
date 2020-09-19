@@ -15,6 +15,7 @@ fbConnection();
 class App extends React.Component {
 state = {
   authed: false,
+  header: 'Timmi',
 }
 
 componentDidMount() {
@@ -31,14 +32,18 @@ componentWillUnmount() {
   this.removeListener();
 }
 
+changeHeader = (header) => {
+  this.setState({ header });
+}
+
 render() {
-  const { authed } = this.state;
+  const { authed, header } = this.state;
 
   const loadComponent = () => {
     if (authed) {
       return <div>
-              <Nav />
-              <Profile />
+              <Nav header={header} />
+              <Profile changeHeader={this.changeHeader} />
             </div>;
     }
     return <Auth />;
