@@ -7,15 +7,16 @@ class SingleMed extends React.Component {
     static propTypes = {
       medication: PropTypes.string.isRequired,
       showMedPage: PropTypes.func.isRequired,
+      setSideEffects: PropTypes.func.isRequired,
     }
 
     medClickEvent = (e) => {
       e.preventDefault();
-      const { medication, showMedPage } = this.props;
+      const { medication, showMedPage, setSideEffects } = this.props;
       openFDA.readFDA(medication)
         .then((medSymptoms) => {
           if (medSymptoms) {
-            console.warn('found em', medSymptoms);
+            setSideEffects(medSymptoms);
             showMedPage(medication);
           } else {
             console.warn('didn\'t find em');

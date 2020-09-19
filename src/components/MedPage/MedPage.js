@@ -11,10 +11,13 @@ class MedPage extends React.Component {
       hideMedPage: PropTypes.func.isRequired,
       selectedMed: PropTypes.string.isRequired,
       medInfo: medShape.medShape,
+      potentialEffects: PropTypes.array.isRequired,
     }
 
     render() {
-      const { hideMedPage, selectedMed, medInfo } = this.props;
+      const {
+        hideMedPage, selectedMed, medInfo, potentialEffects,
+      } = this.props;
       return (
       <div>
           <button className="return-profile" onClick={hideMedPage}>Return to Profile</button>

@@ -14,16 +14,17 @@ class AddMedModal extends React.Component {
       modalDisplay: PropTypes.string.isRequired,
       hideModal: PropTypes.func.isRequired,
       showMedPage: PropTypes.func.isRequired,
+      setSideEffects: PropTypes.func.isRequired,
     }
 
     medSearchEvent = (e) => {
       e.preventDefault();
       const { medSearch } = this.state;
-      const { showMedPage } = this.props;
+      const { showMedPage, setSideEffects } = this.props;
       openFDA.readFDA(medSearch)
         .then((medSymptoms) => {
           if (medSymptoms) {
-            console.warn('found em', medSymptoms);
+            setSideEffects(medSymptoms);
             const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
             showMedPage(capitalize(medSearch));
           } else {

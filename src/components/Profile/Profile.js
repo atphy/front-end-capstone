@@ -28,6 +28,7 @@ class Profile extends React.Component {
         userRating: 0,
         userSideEffects: [],
       },
+      potentialEffects: [],
     }
 
     static propTypes = {
@@ -46,6 +47,10 @@ class Profile extends React.Component {
       const uid = authData.getUid();
       medData.getMedByName(uid, selected)
         .then((medInfo) => this.setState({ medInfo }));
+    }
+
+    setSideEffects = (potentialEffects) => {
+      this.setState({ potentialEffects });
     }
 
     loadProfile = () => {
@@ -67,7 +72,7 @@ class Profile extends React.Component {
 
     render() {
       const {
-        profile, medPage, selectedMed, medInfo,
+        profile, medPage, selectedMed, medInfo, potentialEffects,
       } = this.state;
       const { medicalHistory } = profile;
 
@@ -75,11 +80,11 @@ class Profile extends React.Component {
       <div>
                             {
                       medPage
-                        ? <MedPage medInfo = {medInfo} selectedMed={selectedMed} hideMedPage={this.hideMedPage} />
+                        ? <MedPage potentialEffects={potentialEffects} medInfo = {medInfo} selectedMed={selectedMed} hideMedPage={this.hideMedPage} />
                         : <div className="profile">
-                            <About profile={profile} className="about"/>
+                            <About loadProfile={this.loadProfile} profile={profile} className="about"/>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Oak_tree_with_moon_and_wildflowers.jpg" alt="" className="profile-image"></img>
-                            <ProfileMedHistory showMedPage={this.showMedPage} medicalHistory={medicalHistory} className="med-history"/>
+                            <ProfileMedHistory setSideEffects={this.setSideEffects} showMedPage={this.showMedPage} medicalHistory={medicalHistory} className="med-history"/>
                         </div>
                   }
 

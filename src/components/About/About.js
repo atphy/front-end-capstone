@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './About.scss';
 
@@ -13,10 +14,16 @@ class About extends React.Component {
 
   static propTypes = {
     profile: profileShape.profileShape,
+    loadProfile: PropTypes.func.isRequired,
+  }
+
+  editorBool = () => {
+    const { editor } = this.state;
+    this.setState({ editor: !editor });
   }
 
   render() {
-    const { profile } = this.props;
+    const { profile, loadProfile } = this.props;
     const { editor } = this.state;
     const { aboutSection } = profile;
     const { id } = profile;
@@ -24,9 +31,9 @@ class About extends React.Component {
     return (
         <div className="about">
             <h1 className="about-title">About me</h1>
-            <button className="edit-button" onClick={() => { this.setState({ editor: !editor }); }}><i className="fas fa-edit"></i></button>
+            <button className="edit-button" onClick={this.editorBool}><i className="fas fa-edit"></i></button>
             { editor
-              ? <AboutEditor profile={profile} id={id} aboutSection={aboutSection} />
+              ? <AboutEditor loadProfile={loadProfile} editorBool={this.editorBool} profile={profile} id={id} aboutSection={aboutSection} />
               : <div className="about-container"><p className="about-body">{aboutSection}</p></div> }
         </div>
     );

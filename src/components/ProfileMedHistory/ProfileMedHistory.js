@@ -17,6 +17,7 @@ class ProfileMedHistory extends React.Component {
   static propTypes = {
     profile: profileShape.profileShape,
     showMedPage: PropTypes.func.isRequired,
+    setSideEffects: PropTypes.func.isRequired,
   }
 
   showModal = () => {
@@ -28,14 +29,14 @@ class ProfileMedHistory extends React.Component {
   }
 
   render() {
-    const { medicalHistory, showMedPage } = this.props;
+    const { medicalHistory, showMedPage, setSideEffects } = this.props;
     const { modalDisplay } = this.state;
 
-    const singleMed = medicalHistory.map((medication) => <SingleMed hideMedPage={this.hideMedPage} showMedPage={showMedPage} key={medication} medication={medication} />);
+    const singleMed = medicalHistory.map((medication) => <SingleMed setSideEffects={setSideEffects} hideMedPage={this.hideMedPage} showMedPage={showMedPage} key={medication} medication={medication} />);
 
     return (
           <div className="med-history">
-              <AddMedModal showMedPage={showMedPage} hideModal={this.hideModal} modalDisplay={modalDisplay}/>
+              <AddMedModal setSideEffects={setSideEffects} showMedPage={showMedPage} hideModal={this.hideModal} modalDisplay={modalDisplay}/>
               <button className="add-history" onClick={this.showModal}><i className="fas fa-plus-square"></i></button>
               <p className="med-history-header">My Medical History</p>
               <div className="med-history-body">

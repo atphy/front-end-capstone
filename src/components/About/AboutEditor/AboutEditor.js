@@ -5,14 +5,18 @@ import profileShape from '../../../helpers/props/profileShape';
 import userData from '../../../helpers/data/userData';
 
 class AboutEditor extends React.Component {
+ profile = this.props;
+
   state = {
-    newAbout: '',
+    newAbout: this.profile.aboutSection,
   }
 
     static propTypes = {
       profile: profileShape.profileShape,
       aboutSection: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
+      editorBool: PropTypes.func.isRequired,
+      loadProfile: PropTypes.func.isRequired,
     }
 
     changeAboutEvent = (e) => {
@@ -23,12 +27,19 @@ class AboutEditor extends React.Component {
     editAboutEvent = (e) => {
       e.preventDefault();
       const { newAbout } = this.state;
-      const { id } = this.props;
+      const {
+        id, profile, editorBool, loadProfile,
+      } = this.props;
       const myUpdatedAbout = {
         aboutSection: newAbout,
+        medicalHistory: profile.medicalHistory,
+        shareLink: profile.shareLink,
+        uid: profile.uid,
       };
 
-      userData.updateAbout(id, myUpdatedAbout);
+      userData.updateAbout(id, myUpdatedAbout)
+        .then(() => { loadProfile(); });
+      editorBool();
     }
 
     render() {
