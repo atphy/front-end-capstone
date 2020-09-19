@@ -1,13 +1,13 @@
 { 
     "qHFtRWJyUVMz1YeYvi3IyvQEjZf2": {
-      "bupropion": {
+      "Bupropion": {
         "userRating": 5,
         "userSideEffects": ["Nausea", "Heartburn", "Upset Stomach", "Indigestion"],
         "currentPrescription": true,
         "userNotes" : "Even more words",
         "prescriptionInstances": ["randomId1"]
     },
-      "aripiprazole": {
+      "Aripiprazole": {
         "userRating": 2,
         "userSideEffects": ["Sleeplessness", "Turbo Diarrhea", "Nausea", "Indigestion"],
         "currentPrescription": false,
@@ -16,7 +16,7 @@
     }
   },
   "randomstring": {
-    "pramipexole": {
+    "Pramipexole": {
       "userRating": 5,
       "userSideEffects": ["Nausea", "Heartburn", "Upset Stomach", "Indigestion"],
       "currentPrescription": true,

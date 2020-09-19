@@ -23,21 +23,6 @@ class SingleMed extends React.Component {
         });
     }
 
-    medSearchEvent = (e) => {
-      e.preventDefault();
-      const { medSearch } = this.state;
-      const { showMedPage } = this.props;
-      openFDA.readFDA(medSearch)
-        .then((medSymptoms) => {
-          if (medSymptoms) {
-            console.warn('found em', medSymptoms);
-            showMedPage(medSearch);
-          } else {
-            console.warn('didn\'t find em');
-          }
-        });
-    }
-
     render() {
       const { medication } = this.props;
 

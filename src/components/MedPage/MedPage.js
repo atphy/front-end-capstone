@@ -15,11 +15,10 @@ class MedPage extends React.Component {
 
     render() {
       const { hideMedPage, selectedMed, medInfo } = this.props;
-      const { userNotes } = medInfo;
       return (
       <div>
           <button className="return-profile" onClick={hideMedPage}>Return to Profile</button>
-        <MedAbout userNotes={userNotes} selectedMed={selectedMed} />
+        <MedAbout medInfo={medInfo} selectedMed={selectedMed} />
       </div>
       );
     }

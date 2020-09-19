@@ -22,10 +22,10 @@ class Profile extends React.Component {
       medPage: false,
       selectedMed: '',
       medInfo: {
-        currentPrescription: '',
+        currentPrescription: false,
         prescriptionInstances: [],
-        userNotes: '',
-        userRating: '',
+        userNotes: ' ',
+        userRating: 0,
         userSideEffects: [],
       },
     }
