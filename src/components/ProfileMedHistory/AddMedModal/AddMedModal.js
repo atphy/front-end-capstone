@@ -47,8 +47,11 @@ class AddMedModal extends React.Component {
       <div id="myModal" className="modal" style={modalStyle}>
         <div className="modal-content">
           <span className="close" onClick={hideModal}>&times;</span>
-          <textarea className="edit-about" onChange={this.searchEvent} ></textarea>
-          <button className="edit-about-submit" onClick={this.medSearchEvent}><i className="fas fa-search"></i></button>
+          <h1>Search for a medication</h1>
+          <div>
+            <textarea className="edit-about" onChange={this.searchEvent} ></textarea>
+            <button className="edit-about-submit" onClick={this.medSearchEvent}><i className="fas fa-search"></i></button>
+          </div>
         </div>
 
       </div>

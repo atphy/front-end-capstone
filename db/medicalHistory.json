@@ -1,16 +1,27 @@
 { 
-    "bupropion": {
+    "qHFtRWJyUVMz1YeYvi3IyvQEjZf2": {
+      "bupropion": {
+        "userRating": 5,
+        "userSideEffects": ["Nausea", "Heartburn", "Upset Stomach", "Indigestion"],
+        "currentPrescription": true,
+        "userNotes" : "Even more words",
+        "prescriptionInstances": ["randomId1"]
+    },
+      "aripiprazole": {
+        "userRating": 2,
+        "userSideEffects": ["Sleeplessness", "Turbo Diarrhea", "Nausea", "Indigestion"],
+        "currentPrescription": false,
+        "userNotes" : "General med notes",
+        "prescriptionInstances": ["randomId3"]
+    }
+  },
+  "randomstring": {
+    "pramipexole": {
       "userRating": 5,
       "userSideEffects": ["Nausea", "Heartburn", "Upset Stomach", "Indigestion"],
-      "currentPrescription": "True",
+      "currentPrescription": true,
       "userNotes" : "Even more words",
-      "prescriptionInstances": ["randomId1", "randomId2"]
-    },
-    "aripiprazole": {
-      "userRating": 2,
-      "userSideEffects": ["Sleeplessness", "Turbo Diarrhea", "Nausea", "Indigestion"],
-      "currentPrescription": "False",
-      "userNotes" : "General med notes",
-      "prescriptionInstances": ["randomId3"]
+      "prescriptionInstances": ["randomId2"]
     }
   }
+}
