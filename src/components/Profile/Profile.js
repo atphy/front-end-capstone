@@ -19,7 +19,7 @@ class Profile extends React.Component {
         shareLink: '',
         uid: '',
       },
-      medPage: false,
+      medPage: true,
       selectedMed: '',
       medInfo: {
         currentPrescription: false,

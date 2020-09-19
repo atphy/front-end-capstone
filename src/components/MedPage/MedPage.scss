@@ -1,6 +1,11 @@
 @import '../../styles/variables';
 
+.med-page-container {
+    display: flex;
+}
+
 .return-profile {
+    position: absolute;
     font-size: 18px;
     margin: 0;
     margin-left: 20px;
@@ -8,4 +13,5 @@
     background-color: rgba(0,0,0,0);
     border: none;
     color: $darkGreen;
+    height: 50px;
 }

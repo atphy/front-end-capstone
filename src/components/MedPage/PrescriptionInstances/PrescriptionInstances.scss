@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+
+.instance-container {
+    width: 25vw;
+    height: 340px;
+    position: absolute;
+    margin-top: 415px;
+    margin-left: 20px;
+}
+
+.instance-box {
+    background-color: $lightGreen;
+    width: 25vw;
+    height: 340px;
+    border: solid black;
+    position: absolute;
+    height: 28vh;
+    width: 97vw;
+}
+
+.instance-header {
+    font-family: 'Josefin Sans';
+}
