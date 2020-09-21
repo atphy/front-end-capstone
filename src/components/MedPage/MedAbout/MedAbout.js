@@ -29,7 +29,12 @@ class MedAbout extends React.Component {
         <div className="about-med-container">
           <h1 className="about-header">My Overall Notes About {selectedMed}</h1>
           <button className="edit-button" onClick={this.editorBool}><i className="fas fa-edit"></i></button>
-          <h1 className="med-rating">{medInfo.userRating}/5</h1>
+          <h1 className="med-rating">
+          { medInfo
+            ? medInfo.userRating
+            : ''
+                }
+              /5</h1>
             <div className="about-container">
             <div className="about-container">
                 { editor

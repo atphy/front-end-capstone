@@ -5,7 +5,7 @@ import './SingleEffect.scss';
 
 class SingleEffect extends React.Component {
     static propTypes = {
-      effect: PropTypes.string.isRequired,
+      effect: PropTypes.object.isRequired,
     }
 
     render() {
@@ -13,7 +13,7 @@ class SingleEffect extends React.Component {
 
       return (
         <div className="single-effect-box">
-            <h1 className="single-effect">{effect}</h1>
+            <h1 className="single-effect">{effect.term}</h1>
         </div>
       );
     }

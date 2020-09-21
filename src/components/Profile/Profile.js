@@ -69,12 +69,20 @@ class Profile extends React.Component {
       this.loadProfile();
     }
 
+    checkForMedInfo = () => {
+      const { medInfo } = this.state;
+      if (medInfo) {
+        return medInfo;
+      }
+      return '';
+    }
+
     render() {
       const {
         profile, medPage, selectedMed, medInfo, potentialEffects,
       } = this.state;
-      const { medicalHistory, uid } = profile;
-      const { prescriptionInstances } = medInfo;
+      const { medicalHistory } = profile;
+      const { prescriptionInstances } = this.checkForMedInfo();
 
       return (
       <div>

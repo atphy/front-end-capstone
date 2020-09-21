@@ -20,11 +20,16 @@ state = {
       .then((singleInstance) => { this.setState({ singleInstance }); });
   }
 
-  render() {
+  componentDidMount() {
     this.getInstance();
+  }
+
+  render() {
+    const { singleInstance } = this.state;
     return (
         <div className="single-instance-box">
-            <h1 className="single-instance">hi</h1>
+            <p className="instance-dosage">{singleInstance.dosage}</p>
+            <p className="instance-dates">{singleInstance.startDate} to {singleInstance.endDate}</p>
         </div>
     );
   }

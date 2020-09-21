@@ -12,8 +12,8 @@ class SideEffectsBox extends React.Component {
 
     render() {
       const { potentialEffects } = this.props;
-      const testEffects = ['Diarrhea', 'Nausea', 'Headache', 'Ineffective'];
-      const singleEffect = testEffects.map((effect) => <SingleEffect key={effect} effect={effect}/>);
+      // const testEffects = ['Diarrhea', 'Nausea', 'Headache', 'Ineffective'];
+      const singleEffect = potentialEffects.map((effect) => <SingleEffect key={effect.term} effect={effect}/>);
 
       return (
         <div className="side-effects-container">
