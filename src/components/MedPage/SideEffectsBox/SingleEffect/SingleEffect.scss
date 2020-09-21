@@ -1,0 +1,10 @@
+@import '../../../../styles/variables';
+
+.single-effect-box {
+    border-bottom: solid black 1px;
+    text-align: center;
+    .single-effect {
+        font-family: 'Asap', sans-serif;
+        font-size: 20px;
+    }
+}

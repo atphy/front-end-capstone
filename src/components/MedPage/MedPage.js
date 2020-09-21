@@ -21,6 +21,7 @@ class MedPage extends React.Component {
       const {
         hideMedPage, selectedMed, medInfo, potentialEffects,
       } = this.props;
+
       return (
       <div className="med-page-container">
         <button className="return-profile" onClick={hideMedPage}>Return to Profile</button>

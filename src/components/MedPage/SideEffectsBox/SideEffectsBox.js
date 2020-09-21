@@ -1,15 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './SideEffectsBox.scss';
 
+import SingleEffect from './SingleEffect/SingleEffect';
+
 class SideEffectsBox extends React.Component {
-  render() {
-    return (
+    static propTypes = {
+      potentialEffects: PropTypes.array.isRequired,
+    }
+
+    render() {
+      const { potentialEffects } = this.props;
+      const testEffects = ['Diarrhea', 'Nausea', 'Headache', 'Ineffective'];
+      const singleEffect = testEffects.map((effect) => <SingleEffect key={effect} effect={effect}/>);
+
+      return (
         <div className="side-effects-container">
-            <h1>hi</h1>
+            {singleEffect}
         </div>
-    );
-  }
+      );
+    }
 }
 
 export default SideEffectsBox;
