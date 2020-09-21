@@ -15,11 +15,12 @@ class MedPage extends React.Component {
       selectedMed: PropTypes.string.isRequired,
       medInfo: medShape.medShape,
       potentialEffects: PropTypes.array.isRequired,
+      prescriptionInstances: PropTypes.array.isRequired,
     }
 
     render() {
       const {
-        hideMedPage, selectedMed, medInfo, potentialEffects,
+        hideMedPage, selectedMed, medInfo, potentialEffects, prescriptionInstances,
       } = this.props;
 
       return (
@@ -27,7 +28,7 @@ class MedPage extends React.Component {
         <button className="return-profile" onClick={hideMedPage}>Return to Profile</button>
         <MedAbout medInfo={medInfo} selectedMed={selectedMed} />
         <SideEffectsBox potentialEffects={potentialEffects}/>
-        <PrescriptionInstances />
+        <PrescriptionInstances prescriptionInstances={prescriptionInstances} medInfo={medInfo} selectedMed={selectedMed}/>
       </div>
       );
     }

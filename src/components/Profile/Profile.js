@@ -43,7 +43,6 @@ class Profile extends React.Component {
       setSelectedMed(selected);
       const { changeHeader } = this.props;
       changeHeader(selected);
-      console.warn(selected);
       const uid = authData.getUid();
       medData.getMedByName(uid, selected)
         .then((medInfo) => this.setState({ medInfo }));
@@ -74,13 +73,14 @@ class Profile extends React.Component {
       const {
         profile, medPage, selectedMed, medInfo, potentialEffects,
       } = this.state;
-      const { medicalHistory } = profile;
+      const { medicalHistory, uid } = profile;
+      const { prescriptionInstances } = medInfo;
 
       return (
       <div>
                             {
                       medPage
-                        ? <MedPage potentialEffects={potentialEffects} medInfo = {medInfo} selectedMed={selectedMed} hideMedPage={this.hideMedPage} />
+                        ? <MedPage prescriptionInstances={prescriptionInstances} potentialEffects={potentialEffects} medInfo = {medInfo} selectedMed={selectedMed} hideMedPage={this.hideMedPage} />
                         : <div className="profile">
                             <About loadProfile={this.loadProfile} profile={profile} className="about"/>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Oak_tree_with_moon_and_wildflowers.jpg" alt="" className="profile-image"></img>

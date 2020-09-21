@@ -5,7 +5,7 @@
         "userSideEffects": ["Nausea", "Heartburn", "Upset Stomach", "Indigestion"],
         "currentPrescription": true,
         "userNotes" : "Even more words",
-        "prescriptionInstances": ["randomId1"]
+        "prescriptionInstances": ["randomId1", "randomId2"]
     },
       "Aripiprazole": {
         "userRating": 2,
