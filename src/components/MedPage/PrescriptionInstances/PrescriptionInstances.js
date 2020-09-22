@@ -47,7 +47,6 @@ class PrescriptionInstances extends React.Component {
     addInstance = (newInstance) => {
       instanceData.createInstance(newInstance)
         .then((instance) => {
-          console.warn(newInstance);
           this.addInstancetoMed(instance.data.name);
           this.setState({ editor: false });
         })
@@ -57,7 +56,8 @@ class PrescriptionInstances extends React.Component {
     render() {
       const { selectedMed, prescriptionInstances } = this.props;
       const { editor } = this.state;
-      const medCard = () => prescriptionInstances.map((instance) => <SingleInstance key={instance} instance={instance} />);
+      const medCard = prescriptionInstances.map((instance) => <SingleInstance key={instance} instance={instance} />);
+
       return (
         <div className="instance-container">
             <div className="instance-header-container">
@@ -69,7 +69,7 @@ class PrescriptionInstances extends React.Component {
           : <div className="instance-box">
           <div className="about-container">
                   { prescriptionInstances
-                    ? medCard()
+                    ? medCard
                     : ''
                 }
                         </div>
