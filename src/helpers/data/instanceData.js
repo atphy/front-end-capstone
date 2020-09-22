@@ -9,4 +9,6 @@ const getInstancesByMed = (instanceID) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getInstancesByMed };
+const createInstance = (newInstance) => axios.post(`${baseUrl}/prescriptionInstance.json`, newInstance);
+
+export default { getInstancesByMed, createInstance };
