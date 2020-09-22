@@ -15,7 +15,7 @@ class MedPage extends React.Component {
       selectedMed: PropTypes.string.isRequired,
       medInfo: medShape.medShape,
       potentialEffects: PropTypes.array.isRequired,
-      prescriptionInstances: PropTypes.array.isRequired,
+      prescriptionInstances: PropTypes.array,
     }
 
     render() {

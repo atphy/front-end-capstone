@@ -17,9 +17,14 @@ class MedAbout extends React.Component {
       medInfo: medShape.medShape,
     }
 
-    editorBool = () => {
+    editorBool = (e) => {
+      e.preventDefault();
       const { editor } = this.state;
       this.setState({ editor: !editor });
+    }
+
+    componentDidMount() {
+      const { medInfo } = this.props;
     }
 
     render() {
@@ -32,22 +37,20 @@ class MedAbout extends React.Component {
           <h1 className="med-rating">
           { medInfo
             ? medInfo.userRating
-            : ''
+            : '0'
                 }
               /5</h1>
-            <div className="about-container">
-            <div className="about-container">
                 { editor
-                  ? <p className="about-body">
-                { medInfo
-                  ? medInfo.userNotes
-                  : ''
+                  ? <MedAboutEditor userNotes={medInfo.userNotes} userRating={medInfo.userRating} medInfo={medInfo}/>
+                  : <div className="about-container">
+                  <p className="about-body">
+                  { medInfo
+                    ? medInfo.userNotes
+                    : ''
+                  }
+                        </p>
+                        </div>
                 }
-                      </p>
-                  : <MedAboutEditor />
-                }
-        </div>
-      </div>
     </div>
       );
     }

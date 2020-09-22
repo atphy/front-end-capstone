@@ -11,7 +11,7 @@ class PrescriptionInstances extends React.Component {
     static propTypes = {
       selectedMed: PropTypes.string.isRequired,
       medInfo: medShape.medShape,
-      prescriptionInstances: PropTypes.array.isRequired,
+      prescriptionInstances: PropTypes.array,
     }
 
     render() {

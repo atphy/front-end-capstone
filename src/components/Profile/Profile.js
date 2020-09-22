@@ -19,7 +19,7 @@ class Profile extends React.Component {
         shareLink: '',
         uid: '',
       },
-      medPage: true,
+      medPage: false,
       selectedMed: '',
       medInfo: {
         currentPrescription: false,
@@ -36,16 +36,16 @@ class Profile extends React.Component {
     }
 
     showMedPage = (selected) => {
-      this.setState({ medPage: true });
       const setSelectedMed = (selectedMed) => {
         this.setState({ selectedMed });
       };
       setSelectedMed(selected);
-      const { changeHeader } = this.props;
-      changeHeader(selected);
       const uid = authData.getUid();
       medData.getMedByName(uid, selected)
-        .then((medInfo) => this.setState({ medInfo }));
+        .then((medInfo) => this.setState({ medInfo }))
+        .then(() => this.setState({ medPage: true }));
+      const { changeHeader } = this.props;
+      changeHeader(selected);
     }
 
     setSideEffects = (potentialEffects) => {
@@ -88,7 +88,7 @@ class Profile extends React.Component {
       <div>
                             {
                       medPage
-                        ? <MedPage prescriptionInstances={prescriptionInstances} potentialEffects={potentialEffects} medInfo = {medInfo} selectedMed={selectedMed} hideMedPage={this.hideMedPage} />
+                        ? <MedPage prescriptionInstances={prescriptionInstances} potentialEffects={potentialEffects} medInfo={medInfo} selectedMed={selectedMed} hideMedPage={this.hideMedPage} />
                         : <div className="profile">
                             <About loadProfile={this.loadProfile} profile={profile} className="about"/>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Oak_tree_with_moon_and_wildflowers.jpg" alt="" className="profile-image"></img>
