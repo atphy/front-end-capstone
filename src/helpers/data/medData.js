@@ -9,4 +9,6 @@ const getMedByName = (uid, medName) => new Promise((resolve, reject) => {
     .catch((err) => reject(err));
 });
 
-export default { getMedByName };
+const updateMed = (userId, medName, updatedMed) => axios.put(`${baseUrl}/medicalHistory/${userId}/${medName}.json`, updatedMed);
+
+export default { getMedByName, updateMed };

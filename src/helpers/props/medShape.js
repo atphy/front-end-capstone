@@ -4,7 +4,7 @@ const medShape = PropTypes.shape({
   currentPrescription: PropTypes.bool.isRequired,
   prescriptionInstances: PropTypes.array.isRequired,
   userNotes: PropTypes.string.isRequired,
-  userRating: PropTypes.number.isRequired,
+  userRating: PropTypes.string.isRequired,
   userSideEffects: PropTypes.array.isRequired,
 });
 

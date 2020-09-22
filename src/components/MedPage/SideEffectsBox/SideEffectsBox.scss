@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+
+.side-effects-container {
+    background-color: $lightGreen;
+    width: 25vw;
+    height: 340px;
+    border: solid black;
+    margin-left: 30px;
+    margin-top: 105px;
+    overflow: auto;
+}
