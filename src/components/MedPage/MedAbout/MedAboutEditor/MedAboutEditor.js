@@ -34,7 +34,6 @@ class MedAboutEditor extends React.Component {
         shareLink: profile.shareLink,
         uid: profile.uid,
       };
-
       userData.updateAbout(profile.id, myUpdatedUser);
     }
 
@@ -70,11 +69,13 @@ class MedAboutEditor extends React.Component {
         userRating,
         userSideEffects: effectsFilter(),
       };
-
-      medData.updateMed('qHFtRWJyUVMz1YeYvi3IyvQEjZf2', selectedMed, myUpdatedMed)
-        .then(() => { showMedPage(selectedMed); });
-      editorBool();
-      this.addMedToProfile();
+      if (currentFilter() !== false || instanceFilter()[0] !== '' || effectsFilter()[0] !== '' || userNotes !== '' || userRating !== '') {
+        console.warn(myUpdatedMed);
+        medData.updateMed('qHFtRWJyUVMz1YeYvi3IyvQEjZf2', selectedMed, myUpdatedMed)
+          .then(() => { showMedPage(selectedMed); });
+        editorBool();
+        this.addMedToProfile();
+      } editorBool();
     }
 
     componentDidMount() {
