@@ -26,6 +26,15 @@ class MedAbout extends React.Component {
     render() {
       const { selectedMed, medInfo, showMedPage } = this.props;
       const { editor } = this.state;
+
+      const ratingFilter = () => (medInfo
+        ? medInfo.userRating
+        : '');
+
+      const notesFilter = () => (medInfo
+        ? medInfo.userNotes
+        : '');
+
       return (
         <div className="about-med-container">
           <h1 className="about-header">My Overall Notes About {selectedMed}</h1>
@@ -33,11 +42,11 @@ class MedAbout extends React.Component {
           <h1 className="med-rating">
           { medInfo
             ? medInfo.userRating
-            : '0'
+            : ''
                 }
               /5</h1>
                 { editor
-                  ? <MedAboutEditor showMedPage={showMedPage} selectedMed={selectedMed} editorBool={this.editorBool} userNotes={medInfo.userNotes} userRating={medInfo.userRating} medInfo={medInfo}/>
+                  ? <MedAboutEditor showMedPage={showMedPage} selectedMed={selectedMed} editorBool={this.editorBool} userNotes={notesFilter()} userRating={ratingFilter()} medInfo={medInfo}/>
                   : <div className="about-container">
                   <p className="about-body">
                   { medInfo

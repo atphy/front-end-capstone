@@ -13,8 +13,8 @@ class MedAboutEditor extends React.Component {
 
     static propTypes = {
       medInfo: medShape.medShape,
-      userRating: PropTypes.number,
-      userNotes: PropTypes.string,
+      userRating: PropTypes.string.isRequired,
+      userNotes: PropTypes.string.isRequired,
       editorBool: PropTypes.func.isRequired,
       selectedMed: PropTypes.string.isRequired,
       showMedPage: PropTypes.func.isRequired,
@@ -36,12 +36,21 @@ class MedAboutEditor extends React.Component {
       const {
         editorBool, medInfo, selectedMed, showMedPage,
       } = this.props;
+      const currentFilter = () => (medInfo
+        ? medInfo.currentPrescription
+        : false);
+      const instanceFilter = () => (medInfo
+        ? medInfo.prescriptionInstances
+        : ['']);
+      const effectsFilter = () => (medInfo
+        ? medInfo.userSideEffects
+        : ['']);
       const myUpdatedMed = {
-        currentPrescription: medInfo.currentPrescription,
-        prescriptionInstances: medInfo.prescriptionInstances,
+        currentPrescription: currentFilter(),
+        prescriptionInstances: instanceFilter(),
         userNotes,
         userRating,
-        userSideEffects: medInfo.userSideEffects,
+        userSideEffects: effectsFilter(),
       };
 
       medData.updateMed('qHFtRWJyUVMz1YeYvi3IyvQEjZf2', selectedMed, myUpdatedMed)
@@ -64,7 +73,7 @@ class MedAboutEditor extends React.Component {
            <textarea defaultValue={userNotes} className="form-control" id="formGroupExampleInput2" placeholder="Notes" onChange={this.changeNotesEvent} required />
         </div>
         <div className="form-group">
-          <input type="number" defaultValue={userRating} className="form-control" id="formGroupExampleInput" placeholder="Rating" onChange={this.changeRatingEvent} required />
+          <input type="number" defaultValue={userRating} className="form-control" id="formGroupExampleInput" placeholder="Rating" min="1" max="5" onChange={this.changeRatingEvent} required />
         </div>
         <button type="submit" value="Submit" onClick={this.editMedEvent}></button>
         </form>
