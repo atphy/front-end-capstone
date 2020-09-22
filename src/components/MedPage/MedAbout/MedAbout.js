@@ -23,10 +23,6 @@ class MedAbout extends React.Component {
       this.setState({ editor: !editor });
     }
 
-    componentDidMount() {
-      const { medInfo } = this.props;
-    }
-
     render() {
       const { selectedMed, medInfo, showMedPage } = this.props;
       const { editor } = this.state;

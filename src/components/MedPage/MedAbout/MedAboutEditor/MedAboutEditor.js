@@ -45,7 +45,7 @@ class MedAboutEditor extends React.Component {
       };
 
       medData.updateMed('qHFtRWJyUVMz1YeYvi3IyvQEjZf2', selectedMed, myUpdatedMed)
-        .then(() => { showMedPage(); });
+        .then(() => { showMedPage(selectedMed); });
       editorBool();
     }
 
