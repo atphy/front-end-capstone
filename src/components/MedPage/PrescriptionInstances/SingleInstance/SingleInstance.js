@@ -37,12 +37,9 @@ state = {
 
   deleteClickEvent = (e) => {
     e.preventDefault();
-    const {
-      showMedPage, instance, selectedMed, deleteMedInstance,
-    } = this.props;
+    const { instance, deleteMedInstance } = this.props;
     instanceData.deleteInstance(instance);
     deleteMedInstance(instance);
-    showMedPage(selectedMed);
   }
 
   render() {

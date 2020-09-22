@@ -54,7 +54,9 @@ class PrescriptionInstances extends React.Component {
     }
 
     deleteMedInstance = (instanceId) => {
-      const { medInfo, profile, selectedMed } = this.props;
+      const {
+        medInfo, profile, selectedMed, showMedPage,
+      } = this.props;
       const instanceArray = medInfo.prescriptionInstances;
       const instanceToDelete = instanceArray.indexOf(instanceId);
       instanceArray.splice(instanceToDelete, 1);
@@ -66,7 +68,8 @@ class PrescriptionInstances extends React.Component {
         userRating: medInfo.userRating,
         userSideEffects: medInfo.userSideEffects,
       };
-      medData.updateMed(profile.uid, selectedMed, myUpdatedMed);
+      medData.updateMed(profile.uid, selectedMed, myUpdatedMed)
+        .then(() => showMedPage(selectedMed));
     }
 
     render() {
