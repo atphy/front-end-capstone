@@ -11,6 +11,7 @@ import medShape from '../../helpers/props/medShape';
 
 class MedPage extends React.Component {
     static propTypes = {
+      showMedPage: PropTypes.func.isRequired,
       hideMedPage: PropTypes.func.isRequired,
       selectedMed: PropTypes.string.isRequired,
       medInfo: medShape.medShape,
@@ -20,13 +21,13 @@ class MedPage extends React.Component {
 
     render() {
       const {
-        hideMedPage, selectedMed, medInfo, potentialEffects, prescriptionInstances,
+        showMedPage, hideMedPage, selectedMed, medInfo, potentialEffects, prescriptionInstances,
       } = this.props;
 
       return (
       <div className="med-page-container">
         <button className="return-profile" onClick={hideMedPage}>Return to Profile</button>
-        <MedAbout medInfo={medInfo} selectedMed={selectedMed} />
+        <MedAbout showMedPage={showMedPage} medInfo={medInfo} selectedMed={selectedMed} />
         <SideEffectsBox potentialEffects={potentialEffects}/>
         <PrescriptionInstances prescriptionInstances={prescriptionInstances} medInfo={medInfo} selectedMed={selectedMed}/>
       </div>

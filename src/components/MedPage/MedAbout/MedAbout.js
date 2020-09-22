@@ -15,10 +15,10 @@ class MedAbout extends React.Component {
     static propTypes = {
       selectedMed: PropTypes.string.isRequired,
       medInfo: medShape.medShape,
+      showMedPage: PropTypes.func.isRequired,
     }
 
-    editorBool = (e) => {
-      e.preventDefault();
+    editorBool = () => {
       const { editor } = this.state;
       this.setState({ editor: !editor });
     }
@@ -28,7 +28,7 @@ class MedAbout extends React.Component {
     }
 
     render() {
-      const { selectedMed, medInfo } = this.props;
+      const { selectedMed, medInfo, showMedPage } = this.props;
       const { editor } = this.state;
       return (
         <div className="about-med-container">
@@ -41,7 +41,7 @@ class MedAbout extends React.Component {
                 }
               /5</h1>
                 { editor
-                  ? <MedAboutEditor userNotes={medInfo.userNotes} userRating={medInfo.userRating} medInfo={medInfo}/>
+                  ? <MedAboutEditor showMedPage={showMedPage} selectedMed={selectedMed} editorBool={this.editorBool} userNotes={medInfo.userNotes} userRating={medInfo.userRating} medInfo={medInfo}/>
                   : <div className="about-container">
                   <p className="about-body">
                   { medInfo
