@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import medShape from '../../../helpers/props/medShape';
+import profileShape from '../../../helpers/props/profileShape';
 
 import MedAboutEditor from './MedAboutEditor/MedAboutEditor';
 
@@ -16,6 +17,7 @@ class MedAbout extends React.Component {
       selectedMed: PropTypes.string.isRequired,
       medInfo: medShape.medShape,
       showMedPage: PropTypes.func.isRequired,
+      profile: profileShape.profileShape,
     }
 
     editorBool = () => {
@@ -24,7 +26,9 @@ class MedAbout extends React.Component {
     }
 
     render() {
-      const { selectedMed, medInfo, showMedPage } = this.props;
+      const {
+        selectedMed, medInfo, showMedPage, profile,
+      } = this.props;
       const { editor } = this.state;
 
       const ratingFilter = () => (medInfo
@@ -46,7 +50,7 @@ class MedAbout extends React.Component {
                 }
               /5</h1>
                 { editor
-                  ? <MedAboutEditor showMedPage={showMedPage} selectedMed={selectedMed} editorBool={this.editorBool} userNotes={notesFilter()} userRating={ratingFilter()} medInfo={medInfo}/>
+                  ? <MedAboutEditor profile={profile} showMedPage={showMedPage} selectedMed={selectedMed} editorBool={this.editorBool} userNotes={notesFilter()} userRating={ratingFilter()} medInfo={medInfo}/>
                   : <div className="about-container">
                   <p className="about-body">
                   { medInfo

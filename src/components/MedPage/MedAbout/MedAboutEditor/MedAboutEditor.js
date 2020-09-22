@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import medData from '../../../../helpers/data/medData';
+import userData from '../../../../helpers/data/userData';
 
 import medShape from '../../../../helpers/props/medShape';
+import profileShape from '../../../../helpers/props/profileShape';
 
 class MedAboutEditor extends React.Component {
     state = {
@@ -18,6 +20,22 @@ class MedAboutEditor extends React.Component {
       editorBool: PropTypes.func.isRequired,
       selectedMed: PropTypes.string.isRequired,
       showMedPage: PropTypes.func.isRequired,
+      profile: profileShape.profileShape,
+    }
+
+    addMedToProfile = () => {
+      const { profile, selectedMed } = this.props;
+      const medHistoryArray = profile.medicalHistory;
+      medHistoryArray.indexOf(selectedMed) === -1 ? medHistoryArray.push(selectedMed) : console.warn('This item already exists');
+
+      const myUpdatedUser = {
+        aboutSection: profile.aboutSection,
+        medicalHistory: medHistoryArray,
+        shareLink: profile.shareLink,
+        uid: profile.uid,
+      };
+
+      userData.updateAbout(profile.id, myUpdatedUser);
     }
 
     changeNotesEvent = (e) => {
@@ -56,6 +74,7 @@ class MedAboutEditor extends React.Component {
       medData.updateMed('qHFtRWJyUVMz1YeYvi3IyvQEjZf2', selectedMed, myUpdatedMed)
         .then(() => { showMedPage(selectedMed); });
       editorBool();
+      this.addMedToProfile();
     }
 
     componentDidMount() {

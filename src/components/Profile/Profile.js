@@ -88,7 +88,7 @@ class Profile extends React.Component {
       <div>
                             {
                       medPage
-                        ? <MedPage showMedPage={this.showMedPage} prescriptionInstances={prescriptionInstances} potentialEffects={potentialEffects} medInfo={medInfo} selectedMed={selectedMed} hideMedPage={this.hideMedPage} />
+                        ? <MedPage profile={profile} showMedPage={this.showMedPage} prescriptionInstances={prescriptionInstances} potentialEffects={potentialEffects} medInfo={medInfo} selectedMed={selectedMed} hideMedPage={this.hideMedPage} />
                         : <div className="profile">
                             <About loadProfile={this.loadProfile} profile={profile} className="about"/>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Oak_tree_with_moon_and_wildflowers.jpg" alt="" className="profile-image"></img>
