@@ -11,4 +11,8 @@ const getInstancesByMed = (instanceID) => new Promise((resolve, reject) => {
 
 const createInstance = (newInstance) => axios.post(`${baseUrl}/prescriptionInstance.json`, newInstance);
 
-export default { getInstancesByMed, createInstance };
+const deleteInstance = (instance) => {
+  axios.delete(`${baseUrl}/prescriptionInstance/${instance}.json`);
+};
+
+export default { getInstancesByMed, createInstance, deleteInstance };

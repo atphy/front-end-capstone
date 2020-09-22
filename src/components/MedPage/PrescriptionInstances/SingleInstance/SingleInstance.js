@@ -37,6 +37,8 @@ state = {
         <div className="single-instance-box">
             <p className="instance-dosage">{this.state.singleInstance.dosage}</p>
             <p className="instance-dates">{this.state.singleInstance.startDate} to {this.state.singleInstance.endDate}</p>
+            <p className="instance-dates">{this.state.singleInstance.userNotes}</p>
+            <button><i class="fas fa-times-circle"></i></button>
         </div>
     );
   }
