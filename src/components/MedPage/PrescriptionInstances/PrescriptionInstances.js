@@ -56,20 +56,26 @@ class PrescriptionInstances extends React.Component {
     render() {
       const { selectedMed, prescriptionInstances } = this.props;
       const { editor } = this.state;
-      const medCard = prescriptionInstances.map((instance) => <SingleInstance key={instance} instance={instance} />);
+      console.warn(prescriptionInstances);
+      const instanceChecker = () => {
+        if (prescriptionInstances) {
+          return prescriptionInstances.map((instance) => <SingleInstance key={instance} instance={instance} />);
+        }
+        return '';
+      };
 
       return (
         <div className="instance-container">
             <div className="instance-header-container">
             <h1 className="instance-header">My History with {selectedMed}</h1>
-            <button className="edit-instance-button" onClick={this.editorBool}><i className="fas fa-edit"></i></button>
+            <button className="edit-instance-button" onClick={this.editorBool}><i className="fas fa-plus-square"></i></button>
             </div>
         { editor
           ? <InstanceEditor addInstance={this.addInstance} />
           : <div className="instance-box">
           <div className="about-container">
                   { prescriptionInstances
-                    ? medCard
+                    ? instanceChecker()
                     : ''
                 }
                         </div>
