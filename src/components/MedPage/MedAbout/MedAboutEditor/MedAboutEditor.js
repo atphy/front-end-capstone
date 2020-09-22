@@ -70,7 +70,6 @@ class MedAboutEditor extends React.Component {
         userSideEffects: effectsFilter(),
       };
       if (currentFilter() !== false || instanceFilter()[0] !== '' || effectsFilter()[0] !== '' || userNotes !== '' || userRating !== '') {
-        console.warn(myUpdatedMed);
         medData.updateMed('qHFtRWJyUVMz1YeYvi3IyvQEjZf2', selectedMed, myUpdatedMed)
           .then(() => { showMedPage(selectedMed); });
         editorBool();

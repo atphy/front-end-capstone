@@ -77,6 +77,38 @@ class Profile extends React.Component {
       return '';
     }
 
+    deleteUserMed = (medId) => {
+      const { profile } = this.state;
+      const medArray = profile.medicalHistory;
+      const medToDelete = medArray.indexOf(medId);
+      medArray.splice(medToDelete, 1);
+
+      const myUpdatedUser = {
+        aboutSection: profile.aboutSection,
+        medicalHistory: medArray,
+        shareLink: profile.shareLink,
+        uid: profile.uid,
+      };
+      userData.updateAbout(profile.id, myUpdatedUser);
+    }
+
+    deleteInstances = () => {
+      const { medInfo } = this.state;
+      if (medInfo.prescriptionInstances.length > 1) {
+        medInfo.prescriptionInstances.forEach((instance) => { userData.deleteMedInstance(instance); });
+      } this.loadProfile();
+    }
+
+    deleteMed = (medId) => {
+      const { profile } = this.state;
+      medData.getMedByName(profile.uid, medId)
+        .then((info) => this.setState({ medInfo: info }))
+        .then(() => userData.deleteMed(profile.uid, medId))
+        .then(() => this.deleteUserMed(medId))
+        .then(() => this.deleteInstances())
+        .then(() => this.loadProfile());
+    }
+
     render() {
       const {
         profile, medPage, selectedMed, medInfo, potentialEffects,
@@ -92,7 +124,7 @@ class Profile extends React.Component {
                         : <div className="profile">
                             <About loadProfile={this.loadProfile} profile={profile} className="about"/>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Oak_tree_with_moon_and_wildflowers.jpg" alt="" className="profile-image"></img>
-                            <ProfileMedHistory setSideEffects={this.setSideEffects} showMedPage={this.showMedPage} medicalHistory={medicalHistory} className="med-history"/>
+                            <ProfileMedHistory deleteMed={this.deleteMed} setSideEffects={this.setSideEffects} showMedPage={this.showMedPage} medicalHistory={medicalHistory} className="med-history"/>
                         </div>
                   }
 

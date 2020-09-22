@@ -13,4 +13,14 @@ const getProfileByUid = (uid) => new Promise((resolve, reject) => {
 
 const updateAbout = (userId, updatedUser) => axios.put(`${baseUrl}/user/${userId}.json`, updatedUser);
 
-export default { getProfileByUid, updateAbout };
+const deleteMed = (userId, medId) => {
+  axios.delete(`${baseUrl}/medicalHistory/${userId}/${medId}.json`);
+};
+
+const deleteMedInstance = (instance) => {
+  axios.delete(`${baseUrl}/prescriptionInstance/${instance}.json`);
+};
+
+export default {
+  getProfileByUid, updateAbout, deleteMed, deleteMedInstance,
+};

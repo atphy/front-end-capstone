@@ -8,6 +8,7 @@ class SingleMed extends React.Component {
       medication: PropTypes.string.isRequired,
       showMedPage: PropTypes.func.isRequired,
       setSideEffects: PropTypes.func.isRequired,
+      deleteMed: PropTypes.func.isRequired,
     }
 
     medClickEvent = (e) => {
@@ -24,12 +25,19 @@ class SingleMed extends React.Component {
         });
     }
 
+    deleteClickEvent = (e) => {
+      e.preventDefault();
+      const { deleteMed, medication } = this.props;
+      deleteMed(medication);
+    }
+
     render() {
       const { medication } = this.props;
 
       return (
-        <div onClick={this.medClickEvent} className="med-card">
-          <p className="single-med-card">{medication}</p>
+        <div className="med-card">
+          <p onClick={this.medClickEvent} className="single-med-card">{medication}</p>
+          <button onClick={this.deleteClickEvent} ></button>
         </div>
       );
     }

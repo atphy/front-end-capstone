@@ -7,7 +7,11 @@ import './SingleInstance.scss';
 
 class SingleInstance extends React.Component {
 state = {
-  singleInstance: {},
+  singleInstance: {
+    dosage: '',
+    startDate: '',
+    endDate: '',
+  },
 }
 
   static propTypes = {
@@ -16,8 +20,12 @@ state = {
 
   getInstance = () => {
     const { instance } = this.props;
-    instanceData.getInstancesByMed(instance)
-      .then((singleInstance) => { this.setState({ singleInstance }); });
+    if (instance) {
+      instanceData.getInstancesByMed(instance)
+        .then((res) => {
+          this.setState({ singleInstance: res });
+        });
+    }
   }
 
   componentDidMount() {
@@ -25,11 +33,10 @@ state = {
   }
 
   render() {
-    const { singleInstance } = this.state;
     return (
         <div className="single-instance-box">
-            <p className="instance-dosage">{singleInstance.dosage}</p>
-            <p className="instance-dates">{singleInstance.startDate} to {singleInstance.endDate}</p>
+            <p className="instance-dosage">{this.state.singleInstance.dosage}</p>
+            <p className="instance-dates">{this.state.singleInstance.startDate} to {this.state.singleInstance.endDate}</p>
         </div>
     );
   }

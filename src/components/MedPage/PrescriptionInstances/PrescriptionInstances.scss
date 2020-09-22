@@ -22,3 +22,16 @@
 .instance-header {
     font-family: 'Josefin Sans';
 }
+
+.instance-header-container {
+    width: 1400px;
+    display: flex;
+}
+
+.edit-instance-button {
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: $medGrey;
+    margin-left: 40px;
+    font-size: 29px;
+}
