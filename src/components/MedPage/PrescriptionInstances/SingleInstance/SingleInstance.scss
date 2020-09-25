@@ -5,13 +5,16 @@
     border-bottom: solid black 1px;
     height: 104.4px;
     text-align: left;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 450;
 }
 
 .delete-instance-button {
     position: absolute;
     margin-left: 93.9vw;
     float: right;
-    height: 100px;
+    height: 105px;
     width: 3%;
     border: none;
     border-bottom: solid black 1px;
@@ -19,13 +22,16 @@
 }
 
 .instance-dosage {
-    float: left;
+    margin-right: 10%;
+    margin-left: 15px;
 }
 
 .instance-start-dates {
     float: left;
+    margin-right: 10%;
 }
 
-.instance-end-dates {
-    float: left;
+.instance-notes {
+    right: 0;
+    margin-right: 0;
 }

@@ -30,7 +30,7 @@ class MedPage extends React.Component {
       <div className="med-page-container">
         <button className="return-profile" onClick={hideMedPage}>Return to Profile</button>
         <MedAbout profile={profile} showMedPage={showMedPage} medInfo={medInfo} selectedMed={selectedMed} />
-        <SideEffectsBox potentialEffects={potentialEffects}/>
+        <SideEffectsBox medInfo={medInfo} potentialEffects={potentialEffects}/>
         <PrescriptionInstances profile={profile} showMedPage={showMedPage} prescriptionInstances={prescriptionInstances} medInfo={medInfo} selectedMed={selectedMed}/>
       </div>
       );

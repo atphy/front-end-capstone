@@ -75,7 +75,6 @@ class PrescriptionInstances extends React.Component {
     render() {
       const { selectedMed, prescriptionInstances, showMedPage } = this.props;
       const { editor } = this.state;
-      console.warn(prescriptionInstances);
       const instanceChecker = () => {
         if (prescriptionInstances) {
           return prescriptionInstances.map((instance) => <SingleInstance deleteMedInstance={this.deleteMedInstance} selectedMed={selectedMed} showMedPage={showMedPage} key={instance} instance={instance} />);

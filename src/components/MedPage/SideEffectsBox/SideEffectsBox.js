@@ -3,17 +3,19 @@ import PropTypes from 'prop-types';
 
 import './SideEffectsBox.scss';
 
+import medShape from '../../../helpers/props/medShape';
+
 import SingleEffect from './SingleEffect/SingleEffect';
 
 class SideEffectsBox extends React.Component {
     static propTypes = {
       potentialEffects: PropTypes.array.isRequired,
+      medInfo: medShape.medShape,
     }
 
     render() {
-      const { potentialEffects } = this.props;
-      // const testEffects = ['Diarrhea', 'Nausea', 'Headache', 'Ineffective'];
-      const singleEffect = potentialEffects.map((effect) => <SingleEffect key={effect.term} effect={effect}/>);
+      const { potentialEffects, medInfo } = this.props;
+      const singleEffect = potentialEffects.map((effect) => <SingleEffect medInfo={medInfo} key={effect.term} effect={effect}/>);
 
       return (
         <div className="side-effects-container">

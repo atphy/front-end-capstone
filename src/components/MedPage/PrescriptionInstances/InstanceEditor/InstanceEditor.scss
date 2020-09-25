@@ -1,3 +1,10 @@
+@import '../../../../styles/variables';
+
 .editor-dates {
     display: flex;
+}
+
+.submit-new-instance {
+    background-color: $medGreen;
+    border: none;
 }

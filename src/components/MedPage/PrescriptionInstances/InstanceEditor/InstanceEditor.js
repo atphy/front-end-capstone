@@ -65,7 +65,7 @@ class InstanceEditor extends React.Component {
         <div className="form-group">
            <textarea className="form-control" id="formGroupExampleInput2" placeholder="Notes about med at this dosage" onChange={this.changeNotesEvent} />
         </div>
-        <button type="submit" value="Submit" onClick={this.addInstanceEvent}><i className="fas fa-check-square"></i></button>
+        <button type="submit" value="Submit" className="submit-new-instance" onClick={this.addInstanceEvent}><i className="fas fa-check-square"></i></button>
         </form>
     );
   }
