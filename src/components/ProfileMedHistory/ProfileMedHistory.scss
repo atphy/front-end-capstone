@@ -22,11 +22,12 @@
 }
 
 .med-card {
+    display: flex;
+    width: 100%;
     border-bottom: solid black;
-    height: 60px;
+    height: 100px;
     .single-med-card {
-        margin-bottom: 0;
-        margin-left: 5px;
         margin-top: 30px;
+        margin-left: 5px;
     }
 }

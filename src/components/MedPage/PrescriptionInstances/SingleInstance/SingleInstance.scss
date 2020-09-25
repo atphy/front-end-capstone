@@ -1,3 +1,31 @@
+@import '../../../../styles/variables';
+
 .single-instance-box {
+    display: flex;
     border-bottom: solid black 1px;
+    height: 104.4px;
+    text-align: left;
+}
+
+.delete-instance-button {
+    position: absolute;
+    margin-left: 93.9vw;
+    float: right;
+    height: 100px;
+    width: 3%;
+    border: none;
+    border-bottom: solid black 1px;
+    background-color: $medGreen;
+}
+
+.instance-dosage {
+    float: left;
+}
+
+.instance-start-dates {
+    float: left;
+}
+
+.instance-end-dates {
+    float: left;
 }

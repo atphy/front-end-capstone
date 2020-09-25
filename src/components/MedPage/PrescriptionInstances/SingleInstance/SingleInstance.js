@@ -45,10 +45,10 @@ state = {
   render() {
     return (
         <div className="single-instance-box">
-            <p className="instance-dosage">{this.state.singleInstance.dosage}</p>
-            <p className="instance-dates">{this.state.singleInstance.startDate} to {this.state.singleInstance.endDate}</p>
-            <p className="instance-dates">{this.state.singleInstance.userNotes}</p>
-            <button onClick={this.deleteClickEvent} ><i className="fas fa-times-circle"></i></button>
+            <p className="instance-dosage">{this.state.singleInstance.dosage}</p><br></br>
+            <p className="instance-start-dates">{this.state.singleInstance.startDate} to {this.state.singleInstance.endDate}</p>
+            <p className="instance-end-dates">{this.state.singleInstance.userNotes}</p>
+            <button className="delete-instance-button" onClick={this.deleteClickEvent} ><i className="fas fa-times-circle"></i></button>
         </div>
     );
   }

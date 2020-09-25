@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+
+.delete-med-button {
+    position: absolute;
+    float: right;
+    height: 100px;
+    width: 3%;
+    border: none;
+    border-bottom: solid black 1px;
+    background-color: $medGreen;
+    margin-left: 21.8vw;
+}

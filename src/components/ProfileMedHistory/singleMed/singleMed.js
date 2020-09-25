@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import openFDA from '../../../helpers/data/openFDA';
 
+import './SingleMed.scss';
+
 class SingleMed extends React.Component {
     static propTypes = {
       medication: PropTypes.string.isRequired,
@@ -37,7 +39,7 @@ class SingleMed extends React.Component {
       return (
         <div className="med-card">
           <p onClick={this.medClickEvent} className="single-med-card">{medication}</p>
-          <button onClick={this.deleteClickEvent} ></button>
+          <button className="delete-med-button" onClick={this.deleteClickEvent} ><i className="fas fa-times-circle"></i></button>
         </div>
       );
     }
