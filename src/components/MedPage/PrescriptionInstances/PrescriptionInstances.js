@@ -53,13 +53,32 @@ class PrescriptionInstances extends React.Component {
         .catch((err) => console.error('create failed', err));
     }
 
+    deleteMedInstance = (instanceId) => {
+      const {
+        medInfo, profile, selectedMed, showMedPage,
+      } = this.props;
+      const instanceArray = medInfo.prescriptionInstances;
+      const instanceToDelete = instanceArray.indexOf(instanceId);
+      instanceArray.splice(instanceToDelete, 1);
+
+      const myUpdatedMed = {
+        currentPrescription: medInfo.currentPrescription,
+        prescriptionInstances: instanceArray,
+        userNotes: medInfo.userNotes,
+        userRating: medInfo.userRating,
+        userSideEffects: medInfo.userSideEffects,
+      };
+      medData.updateMed(profile.uid, selectedMed, myUpdatedMed)
+        .then(() => showMedPage(selectedMed));
+    }
+
     render() {
-      const { selectedMed, prescriptionInstances } = this.props;
+      const { selectedMed, prescriptionInstances, showMedPage } = this.props;
       const { editor } = this.state;
       console.warn(prescriptionInstances);
       const instanceChecker = () => {
         if (prescriptionInstances) {
-          return prescriptionInstances.map((instance) => <SingleInstance key={instance} instance={instance} />);
+          return prescriptionInstances.map((instance) => <SingleInstance deleteMedInstance={this.deleteMedInstance} selectedMed={selectedMed} showMedPage={showMedPage} key={instance} instance={instance} />);
         }
         return '';
       };

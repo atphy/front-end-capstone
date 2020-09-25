@@ -5,7 +5,7 @@ const baseUrl = apiKeys.openFDAConfig.databaseURL;
 const keysFDA = apiKeys.openFDAConfig.apiKey;
 
 const readFDA = (search) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}?api_key=${keysFDA}&search=patient.drug.openfda.generic_name:${search}&count=patient.reaction.reactionmeddrapt.exact&limit=2`)
+  axios.get(`${baseUrl}?api_key=${keysFDA}&search=patient.drug.openfda.generic_name:${search}&count=patient.reaction.reactionmeddrapt.exact&limit=12`)
     .then((response) => {
       const objects = response.data.results;
       const array = [];

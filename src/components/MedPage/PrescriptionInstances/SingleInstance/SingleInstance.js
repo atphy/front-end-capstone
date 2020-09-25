@@ -15,7 +15,10 @@ state = {
 }
 
   static propTypes = {
+    showMedPage: PropTypes.func.isRequired,
     instance: PropTypes.string.isRequired,
+    selectedMed: PropTypes.string.isRequired,
+    deleteMedInstance: PropTypes.func.isRequired,
   }
 
   getInstance = () => {
@@ -32,13 +35,20 @@ state = {
     this.getInstance();
   }
 
+  deleteClickEvent = (e) => {
+    e.preventDefault();
+    const { instance, deleteMedInstance } = this.props;
+    instanceData.deleteInstance(instance);
+    deleteMedInstance(instance);
+  }
+
   render() {
     return (
         <div className="single-instance-box">
-            <p className="instance-dosage">{this.state.singleInstance.dosage}</p>
-            <p className="instance-dates">{this.state.singleInstance.startDate} to {this.state.singleInstance.endDate}</p>
-            <p className="instance-dates">{this.state.singleInstance.userNotes}</p>
-            <button><i class="fas fa-times-circle"></i></button>
+            <p className="instance-dosage">{this.state.singleInstance.dosage}</p><br></br>
+            <p className="instance-start-dates">{this.state.singleInstance.startDate} to {this.state.singleInstance.endDate}</p>
+            <p className="instance-end-dates">{this.state.singleInstance.userNotes}</p>
+            <button className="delete-instance-button" onClick={this.deleteClickEvent} ><i className="fas fa-times-circle"></i></button>
         </div>
     );
   }
