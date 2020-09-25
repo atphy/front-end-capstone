@@ -8,3 +8,13 @@
         font-size: 20px;
     }
 }
+
+.single-effect-box-selected {
+    border-bottom: solid black 1px;
+    text-align: center;
+    background-color: $darkGreen;
+    .single-effect {
+        font-family: 'Asap', sans-serif;
+        font-size: 20px;
+    }
+}

@@ -21,7 +21,7 @@ render() {
       <nav>
         <h1 className="nav-title">{header}</h1>
         <div className="anchor-holder">
-          <button className="nav-link">Get your private link for sharing</button>
+          {/* <button className="nav-link">Get your private link for sharing</button> */}
           <button className="nav-logout" onClick={this.logoutClick}>Log out</button>
         </div>
       </nav>

@@ -7,6 +7,8 @@ import userData from '../../../../helpers/data/userData';
 import medShape from '../../../../helpers/props/medShape';
 import profileShape from '../../../../helpers/props/profileShape';
 
+import './MedAboutEditor.scss';
+
 class MedAboutEditor extends React.Component {
     state = {
       userNotes: '',
@@ -94,7 +96,7 @@ class MedAboutEditor extends React.Component {
         <div className="form-group">
           <input type="number" defaultValue={userRating} className="form-control" id="formGroupExampleInput" placeholder="Rating" min="1" max="5" onChange={this.changeRatingEvent} required />
         </div>
-        <button type="submit" value="Submit" onClick={this.editMedEvent}></button>
+        <button type="submit" value="Submit" className="submit-instance" onClick={this.editMedEvent}><i className="fas fa-check"></i></button>
         </form>
       );
     }
