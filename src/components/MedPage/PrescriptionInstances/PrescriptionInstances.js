@@ -77,7 +77,8 @@ class PrescriptionInstances extends React.Component {
       const { editor } = this.state;
       const instanceChecker = () => {
         if (prescriptionInstances) {
-          return prescriptionInstances.map((instance) => <SingleInstance deleteMedInstance={this.deleteMedInstance} selectedMed={selectedMed} showMedPage={showMedPage} key={instance} instance={instance} />);
+          return prescriptionInstances.map((instance) => 
+          <SingleInstance deleteMedInstance={this.deleteMedInstance} selectedMed={selectedMed} showMedPage={showMedPage} key={instance} instance={instance} />);
         }
         return '';
       };

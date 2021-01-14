@@ -41,11 +41,13 @@ state = {
 
     userEffect = () => {
       const { effect, medInfo } = this.props;
-      const upperCaseUserEffects = medInfo.userSideEffects.map((f) => f.toUpperCase());
-      if (upperCaseUserEffects.includes(effect.term)) {
-        this.setState({ userEffect: true });
-      } else {
-        this.setState({ userEffect: false });
+      if (medInfo) {
+        const upperCaseUserEffects = medInfo.userSideEffects.map((f) => f.toUpperCase());
+        if (upperCaseUserEffects.includes(effect.term)) {
+          this.setState({ userEffect: true });
+        } else {
+          this.setState({ userEffect: false });
+        }
       }
     }
 
